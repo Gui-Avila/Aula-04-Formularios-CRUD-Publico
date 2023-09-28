@@ -1,0 +1,6 @@
+<h1>Remover Musica!</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.item_to_remove }}
+    <button type="submit">Remove</button>
+</form>

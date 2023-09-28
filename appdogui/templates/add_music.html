@@ -1,0 +1,10 @@
+<h1>Adicionar sua música favorita!</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Adicione!</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Guilherme Ávila</title>
+  
+  <link href="{% static 'appdogui/css/style.css' %}" rel="stylesheet" type="text/css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <h1>Guilherme Ferreira Lima de Ávila</h1>
+  <h2>Um breve resumo de seus gostos musicais.</h2>
+
+  <p><i>Quem é</i> <u>Guilherme Ávila</u>?</p>
+  <p>Estudante de <b>Engenharia da Computação</b>, na <b>PUC-Rio</b>, é um aluno dedicado, eclético e apaixonado por música desde muito jovem.</p>
+    <p>Aqui será abordado algumas de suas principais referências musicais, gostos e interesses, além de outras informações relacionadas ao assunto.</p>
+  <div class="blue-center"><img src="{% static 'appdogui/images/1677811013218 (1).jpg' %}" width="300"></div>
+
+
+   <h2>Instrumentos que sei tocar</h2>
+  
+  <ul>
+  {% for instrument in instruments %}
+    <li>
+      <a href="{% url 'edit_instrument' instrument.id %}">{{ instrument.name }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+<p>Clique em um dos instrumentos para editá-lo!</p>
+<br>
+<button onclick="location.href='{% url 'add_instrument' %}'">Adicione um instrumento que você toca!</button>
+<br>
+<button onclick="location.href='{% url 'remove_instrument' %}'">Remova uma instrumento! </button>
+  
+  <div class="blue-center"><img src="{% static 'appdogui/images/download (1).jpg' %}" alt="Your Image Description" width="700"></div>
+  
+   <h2>Músicas Prediletas</h2>
+<ol>
+  {% for music in musics %}
+    <li>
+      <a href="{% url 'edit_music' music.id %}">{{ music.title }}</a>
+    </li>
+  {% endfor %}
+</ol>
+<p>Clique em uma das musicas para editá-la!</p>
+<br>
+<button onclick="location.href='{% url 'add_music' %}'">Adicione a sua música favorita também! </button>
+<br>
+<button onclick="location.href='{% url 'remove_music' %}'">Remova uma música! </button>
+
+  
+  <h2>Principais Músicas do Spotify, World Hits</h2>
+  
+  <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank">Spotify Top Songs</a>
+ 
+  
+<h2>Bandas/Artistas Prediletos, Estilo e Origem</h2>
+
+<table>
+  <tr>
+    <th>Banda</th>
+    <th>Estilo</th>
+    <th>País</th>
+  </tr>
+  {% for band in bands %}
+  <tr>
+    <td><b>{{ band.name }}</b></td>
+    <td>{{ band.genre }}</td>
+    <td>{{ band.origin }}</td>
+  <tr>
+  {% endfor %}
+</table>
+<br>
+
+<button onclick="location.href='{% url 'add_band' %}'">Adicione a sua banda favorita também!</button>
+<br>
+<button onclick="location.href='{% url 'remove_band' %}'">Remova uma banda! </button>
+
+<h3>Espero que tenha gostado!</h3>
+<br>
+</body>
+  
+</html>

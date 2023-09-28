@@ -1,0 +1,7 @@
+<h1>Editar Instrumento</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar Mudanças!</button>
+</form>

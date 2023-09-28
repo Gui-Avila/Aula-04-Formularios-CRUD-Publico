@@ -1,0 +1,11 @@
+<h1>Adicione sua banda favorita!</h1>
+<body>
+<!-- Vi esse método em alguns documentos do django e achei um pouco mais clean do que no vídeo! Na aula converso com o professor sobre e mostro, mas, na teoria, está tudo rodando bonitinho! -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Adicione!</button>
+</form>
+
+</body>
+</html>
