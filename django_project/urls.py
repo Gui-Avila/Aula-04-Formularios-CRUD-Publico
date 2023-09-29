@@ -14,5 +14,4 @@ urlpatterns = [
   path('remove-instrument/', views.remove_instrument, name='remove_instrument'),
   path('edit-instrument/<int:instrument_id>/', views.edit_instrument, name='edit_instrument'),
   path('edit-music/<int:music_id>/', views.edit_music, name='edit_music'),
-  
 ]

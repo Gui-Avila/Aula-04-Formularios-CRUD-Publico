@@ -3,7 +3,6 @@ import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 if SECRET_KEY is None:
@@ -26,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appdogui',
+
 ]
 
 MIDDLEWARE = [
